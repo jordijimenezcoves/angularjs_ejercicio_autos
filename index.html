@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="mantenimientoAutosApp" ng-controller="mainCtrl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Mantenimiento Autos</title>
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+        <link rel="stylesheet" href="fontawesome/css/regular.min.css">
+
+        <!-- Estilo personalizado -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular.route.js"></script>
+        <script src="js/lib/ui-utils.min.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/config.js"></script>
+        
+        <!-- Controladores de páginas -->
+        <script src="js/inicioCtrl.js"></script>
+        <script src="js/marcasCtrl.js"></script>
+        <script src="js/autosCtrl.js"></script>
+        <script src="js/autoCtrl.js"></script>
+        
+    </head>
+    <body>
+      <div ng-include="menuSuperior"></div>
+      <div class="container">
+        <div ng-view></div>
+      </div>
+    </body>
+</html>
