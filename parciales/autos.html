@@ -6,15 +6,25 @@
 <h4>Listado de autos en el sistema</h4>
 <hr>
 
-<div class="row" align="right">
-    <a href="#!/auto/nuevo" class="btn btn-info">
-        <i class="fas fa-car"></i>
-        Crear auto
-    </a>
-    <br><br>
+<div style="margin-bottom: 20px; display: flex;">
+    <div style="margin: 5px;">
+        <input type="text" placeholder="Filtrar por marca" ng-model="busqueda.marca" class="form-control">
+    </div>
+    <div style="margin: 5px;">
+        <input type="text" placeholder="Filtrar por modelo" ng-model="busqueda.modelo" class="form-control">
+    </div>
+    <div style="margin: 5px;">
+        <input type="text" placeholder="Filtrar por año" ng-model="busqueda.ano" class="form-control">
+    </div>
+    <div style="margin: 5px; margin-left: auto;">
+        <a href="#!/auto/nuevo" class="btn btn-info">
+            <i class="fas fa-car"></i>
+            Crear auto
+        </a>
+    </div>
 </div>
 
-<div class="row">
+<div>
     <table class="table table-striped">
         <tr>
             <th>Marca</th>
@@ -24,7 +34,7 @@
             <th>Precio</th>
             <th>Ver</th>
         </tr>
-        <tr ng-repeat="auto in autos | limitTo:posicion | limitTo:-5">
+        <tr ng-repeat="auto in autos | limitTo:posicion | limitTo:-5 | filter:busqueda">
             <td>{{ auto.marca }}</td>
             <td>{{ auto.modelo }}</td>
             <td>{{ auto.color }}</td>
